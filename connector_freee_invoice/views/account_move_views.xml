@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Takahiro SUNAGA <t.sunaga@takahii.co>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_move_form_freee" model="ir.ui.view">
+        <field name="name">account.move.form.freee</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page
+                    string="freee"
+                    groups="connector_freee_base.group_freee_user"
+                    invisible="move_type not in ('out_invoice', 'out_refund')"
+                >
+                    <!-- The action creates/writes freee.account.move
+                         bindings, which per ir.model.access.csv only freee
+                         admins and account managers may do. Gate the button
+                         to those groups so a plain freee User (who sees
+                         this page read-only) does not click into an
+                         AccessError. -->
+                    <button
+                        name="action_freee_resync"
+                        type="object"
+                        string="Sync to freee"
+                        class="btn-primary"
+                        icon="fa-cloud-upload"
+                        groups="connector_freee_base.group_freee_admin,account.group_account_manager"
+                        invisible="state != 'posted'"
+                        help="Push the latest invoice state to every authorized freee backend for this company. Use after editing a posted invoice or to retry a failed export."
+                        confirm="This overwrites the freee deal with Odoo's current data. Anything entered by hand in the freee UI (withholding tax, transaction memos, linked walletable, etc.) will be lost — the Deals API cannot carry those in the payload, so they are dropped on PUT. Continue?"
+                    />
+                    <field name="freee_bind_ids" readonly="1">
+                        <list>
+                            <field name="backend_id" />
+                            <field name="external_id" />
+                            <field
+                                name="sync_state"
+                                decoration-success="sync_state == 'done'"
+                                decoration-warning="sync_state == 'pending'"
+                                decoration-danger="sync_state == 'error'"
+                                decoration-muted="sync_state == 'to_delete'"
+                            />
+                            <field name="sync_date" />
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

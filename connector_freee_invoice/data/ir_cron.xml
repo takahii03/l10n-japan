@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Takahiro SUNAGA <t.sunaga@takahii.co>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<!-- noupdate so admin tweaks (disabled cron, custom interval, custom
+     nextcall) survive module upgrades. -->
+<odoo noupdate="1">
+    <record id="ir_cron_export_pending_invoices_pm" model="ir.cron">
+        <field name="name">freee: Export pending invoices (PM)</field>
+        <field name="model_id" ref="connector_freee_base.model_freee_backend" />
+        <field name="state">code</field>
+        <field name="code">model._cron_export_pending_invoices()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <!-- First run at the NEXT 22:00 (server time): installing after
+             22:00 must not produce a nextcall in the past, which would
+             fire the sweep immediately mid-installation. -->
+        <field
+            name="nextcall"
+            eval="(datetime.now() + relativedelta(days=(1 if datetime.now().hour &gt;= 22 else 0), hour=22, minute=0, second=0, microsecond=0)).strftime('%Y-%m-%d %H:%M:%S')"
+        />
+        <field name="active" eval="True" />
+    </record>
+</odoo>

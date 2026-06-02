@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_freee_account_move_user,freee.account.move user,model_freee_account_move,connector_freee_base.group_freee_user,1,0,0,0
+access_freee_account_move_admin,freee.account.move admin,model_freee_account_move,connector_freee_base.group_freee_admin,1,1,1,1
+access_freee_account_move_account_manager,freee.account.move account manager,model_freee_account_move,account.group_account_manager,1,1,1,0

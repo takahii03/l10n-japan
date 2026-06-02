@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Takahiro SUNAGA <t.sunaga@takahii.co>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!-- Aggregate export-failure alert. The per-binding sync_state only
+         shows up if someone looks; this gives the nightly sweep a single
+         "N invoices failed" signal a freee admin actually sees. One open
+         activity per backend; retracted automatically once all bindings
+         recover. -->
+    <record id="mail_activity_freee_export_failures" model="mail.activity.type">
+        <field name="name">freee: invoice export failures</field>
+        <field name="summary">freee invoice export failures need attention</field>
+        <field name="icon">fa-exclamation-triangle</field>
+        <field name="category">default</field>
+        <field name="res_model">freee.backend</field>
+        <!-- The nightly sweep runs late, so ``delay_count=0`` would
+             stamp the activity as "due today" — already past by the
+             time anyone reads it. Make it due tomorrow so the to-do
+             surfaces on the next morning's list instead of sliding
+             into the overdue bucket. -->
+        <field name="delay_count">1</field>
+        <field name="delay_unit">days</field>
+    </record>
+</odoo>

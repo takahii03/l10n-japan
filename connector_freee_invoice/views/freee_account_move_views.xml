@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Takahiro SUNAGA <t.sunaga@takahii.co>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_freee_account_move_tree" model="ir.ui.view">
+        <field name="name">freee.account.move.list</field>
+        <field name="model">freee.account.move</field>
+        <field name="arch" type="xml">
+            <list string="freee Invoice Bindings">
+                <field name="backend_id" />
+                <field name="odoo_id" />
+                <field name="external_id" />
+                <field
+                    name="sync_state"
+                    decoration-success="sync_state == 'done'"
+                    decoration-warning="sync_state == 'pending'"
+                    decoration-danger="sync_state == 'error'"
+                    decoration-muted="sync_state == 'to_delete'"
+                />
+                <field name="sync_date" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_freee_account_move_form" model="ir.ui.view">
+        <field name="name">freee.account.move.form</field>
+        <field name="model">freee.account.move</field>
+        <field name="arch" type="xml">
+            <form string="freee Invoice Binding">
+                <header>
+                    <field
+                        name="sync_state"
+                        widget="statusbar"
+                        statusbar_visible="pending,done"
+                    />
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="backend_id" />
+                            <field name="odoo_id" />
+                            <field name="external_id" />
+                        </group>
+                        <group>
+                            <field name="sync_date" />
+                        </group>
+                    </group>
+                    <!-- ``sync_error`` carries freee's verbatim error body
+                         and may include partner / amount / line text.
+                         Restrict the whole "Last Error" group to freee
+                         admins; regular freee users still see ``sync_state``
+                         in the header so they know an error happened. -->
+                    <group
+                        string="Last Error"
+                        invisible="not sync_error"
+                        groups="connector_freee_base.group_freee_admin"
+                    >
+                        <field name="sync_error" nolabel="1" readonly="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_freee_account_move" model="ir.actions.act_window">
+        <field name="name">freee Invoice Bindings</field>
+        <field name="res_model">freee.account.move</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_freee_account_move"
+        name="Invoice Bindings"
+        parent="connector_freee_base.menu_freee_root"
+        action="action_freee_account_move"
+        sequence="10"
+    />
+</odoo>

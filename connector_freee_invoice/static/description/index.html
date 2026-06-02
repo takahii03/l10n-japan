@@ -1,0 +1,1195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
+<title>Connector freee Invoice</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
+
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: gray; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic, pre.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="connector-freee-invoice">
+<h1 class="title">Connector freee Invoice</h1>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This file is generated by oca-gen-addon-readme !!
+!! changes will be overwritten.                   !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! source digest: sha256:48cb0a563729d064962670f91061c395653b4237a869b35f10024b5cb2551d60
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Alpha" src="https://img.shields.io/badge/maturity-Alpha-red.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/l10n-japan/tree/18.0/connector_freee_invoice"><img alt="OCA/l10n-japan" src="https://img.shields.io/badge/github-OCA%2Fl10n--japan-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/l10n-japan-18-0/l10n-japan-18-0-connector_freee_invoice"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/l10n-japan&amp;target_branch=18.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p>This module exports Odoo customer invoices (<tt class="docutils literal">account.move</tt> of type
+<tt class="docutils literal">out_invoice</tt> / <tt class="docutils literal">out_refund</tt>) to freee Accounting as <strong>deals</strong>
+through the freee REST API, using the OCA <em>connector</em> framework.</p>
+<p>It builds on top of <tt class="docutils literal">connector_freee_base</tt> (which handles
+authentication, the freee backend record and the low-level HTTP client)
+and adds:</p>
+<ul class="simple">
+<li>A binding model <tt class="docutils literal">freee.account.move</tt> that links each Odoo invoice to
+its freee deal id.</li>
+<li>Per-record components (Binder, Mapper, Adapter, Synchronizer) so every
+step of the export can be overridden independently.</li>
+<li>A scheduled action (<tt class="docutils literal">ir.cron</tt>) — <em>freee: Export pending invoices
+(PM)</em> — that runs once a day (22:00 server time by default; tune it
+under <em>Settings → Technical → Scheduled Actions</em>), sweeps posted
+customer invoices and dispatches one <tt class="docutils literal">queue_job</tt> per un-exported
+invoice (initial export, POST). <strong>The cron handles initial create +
+delete only</strong> — it does <strong>not</strong> issue <tt class="docutils literal">PUT <span class="pre">/api/1/deals/{id}</span></tt>
+updates.</li>
+<li><strong>Updates are manual.</strong> Once an invoice has been exported, the
+connector does <strong>not</strong> automatically re-push changes that happen on
+the posted Odoo invoice. Editing a posted invoice is itself a policy
+decision (electronic-bookkeeping / inalterability), so we do not
+silently rewrite the matching freee deal. To push an edit, use the
+<em>Sync to freee</em> button on the invoice form — the connector then issues
+<tt class="docutils literal">PUT <span class="pre">/api/1/deals/{id}</span></tt> once. The cron sweep never enters the update
+branch on its own.</li>
+<li>Deferred delete: <tt class="docutils literal">account.move.button_cancel</tt> only flips bound
+bindings to <tt class="docutils literal"><span class="pre">sync_state='to_delete'</span></tt>. The same cron then dispatches
+one throttled <tt class="docutils literal">delete_invoice</tt> job per marked binding, which calls
+<tt class="docutils literal">DELETE <span class="pre">/api/1/deals/{id}</span></tt> and clears <tt class="docutils literal">external_id</tt> (the binding
+row is kept for audit). Because the DELETE is deferred, re-posting the
+invoice before the next cron tick reverts the mark (back to <em>Synced</em>)
+and the freee deal stays as-is — press <em>Sync to freee</em> if you also
+need to push the edits made in the draft window.</li>
+<li>A <em>Sync to freee</em> button on the invoice form (under the <em>freee</em>
+notebook page) for ad-hoc creates and updates — useful right after
+posting, after editing on a posted move, or to retry a binding stuck
+in <em>Error</em> without waiting for the next cron tick.</li>
+<li><strong>Scope of the connector — explicit non-goal: payment
+reconciliation.</strong> freee is the <strong>financial-accounting</strong> ledger and the
+authoritative source for AR settlement; Odoo is the
+<strong>commercial-transaction detail</strong> side. The connector exports invoice
+issuance only — Odoo <tt class="docutils literal">account.payment</tt>, partial payments and
+reconciliation are <strong>not</strong> pushed to freee, and freee-side payments
+are not pulled back to Odoo. Mark settled deals on freee; Odoo’s
+<tt class="docutils literal">payment_state</tt> is informational only.</li>
+<li>Mapping fields on <tt class="docutils literal">account.account</tt> and <tt class="docutils literal">account.tax</tt> for freee
+account-item ids and tax codes (set up in <tt class="docutils literal">connector_freee_base</tt>,
+alongside partner and item mappings).</li>
+</ul>
+<p>The mapping rules, adapted to Odoo: customer invoices become freee
+<tt class="docutils literal">type=income</tt> deals. <strong>Refunds</strong> (<tt class="docutils literal">out_refund</tt>) are also exported as
+<tt class="docutils literal">type=income</tt> deals, but carrying <strong>negative</strong> <tt class="docutils literal"><span class="pre">details[].amount</span></tt> /
+<tt class="docutils literal">vat</tt> — freee registers a negative amount as a deduction / negative
+line (a “red-slip” entry), so the refund nets against sales on the P&amp;L
+statement rather than landing in expenses. (Verified against the freee
+OpenAPI schema <tt class="docutils literal">v2020_06_15</tt>: <tt class="docutils literal">dealCreateParams</tt>
+<tt class="docutils literal"><span class="pre">details[].amount</span></tt> allows negative int64 values — the field doc states
+that a negative value is registered as a deduction / negative line. No
+type-flip to <tt class="docutils literal">expense</tt> and no manual sales-returns reclass on freee
+are needed.)</p>
+<p>A deal is exported <strong>unsettled by default</strong>. Settlement is opt-in <strong>per
+journal</strong>: map a freee walletable (account) onto the invoice’s
+<tt class="docutils literal">account.journal</tt> (picker wizard in <tt class="docutils literal">connector_freee_base</tt>) and
+invoices on that journal are instead exported <strong>settled</strong> — one
+<tt class="docutils literal">payments[]</tt> entry for the full tax-inclusive total, paid from that
+walletable on the invoice date. With no walletable mapped the deal stays
+unsettled, as before. Refunds (<tt class="docutils literal">out_refund</tt>) on a journal with a
+walletable settle the same way but with a <strong>negative</strong>
+<tt class="docutils literal"><span class="pre">payments[].amount</span></tt> (money flowing back out — freee accepts a negative
+amount on a deal’s inline <tt class="docutils literal">payments</tt>); with no walletable they stay
+unsettled. Note that <tt class="docutils literal">payments</tt> is only sent on the initial POST —
+freee’s deal-update API has no <tt class="docutils literal">payments</tt> field, so a later <em>Sync to
+freee</em> (PUT) cannot change settlement.</p>
+<p>Optionally, a <strong>sales-returns account</strong> can be mapped per journal
+(<em>Accounting → Configuration → Journals → freee Mapping</em> tab → <em>Pick
+from freee</em>). When set, every line of an exported credit note on that
+journal is booked to that freee account item (typically a sales-returns
+or sales-discount account) instead of the line’s own account — keeping
+returns in a dedicated contra-revenue account. Left unset, refund lines
+keep their own (negative) account mapping.</p>
+<div class="section" id="update-and-delete-flows">
+<h1>Update and delete flows</h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="36%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Trigger</th>
+<th class="head">What happens</th>
+<th class="head">freee call</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Initial post + cron
+run</td>
+<td>Binding created (no
+<tt class="docutils literal">external_id</tt>);
+<tt class="docutils literal">record.exporter</tt> POSTs
+the deal and stores the
+freee id.</td>
+<td><tt class="docutils literal">POST /api/1/deals</tt></td>
+</tr>
+<tr><td>Edit on a posted
+invoice</td>
+<td><strong>No automatic push.</strong> The
+binding stays <em>Synced</em> on
+Odoo’s side and the freee
+deal is <strong>not</strong> updated
+unless the operator presses
+<em>Sync to freee</em> explicitly.</td>
+<td>(none)</td>
+</tr>
+<tr><td><em>Sync to freee</em>
+button</td>
+<td><tt class="docutils literal">action_freee_resync</tt>
+enqueues an export for
+every authorized backend
+matching the move’s
+company. The exporter
+routes to <tt class="docutils literal">POST</tt> when
+there is no <tt class="docutils literal">external_id</tt>
+yet, or to
+<tt class="docutils literal">PUT <span class="pre">/api/1/deals/{id}</span></tt>
+to push edits when one is
+bound.</td>
+<td><tt class="docutils literal">POST</tt> or <tt class="docutils literal">PUT</tt></td>
+</tr>
+<tr><td>Cancel
+(<tt class="docutils literal">button_cancel</tt>)</td>
+<td>Bindings flipped to
+<tt class="docutils literal"><span class="pre">sync_state='to_delete'</span></tt>.
+Next cron run enqueues one
+throttled
+<tt class="docutils literal">delete_invoice</tt> job per
+marked binding;
+<tt class="docutils literal">record.deleter</tt> calls
+the API, then clears
+<tt class="docutils literal">external_id</tt> while
+keeping the binding row.</td>
+<td>(deferred)
+<tt class="docutils literal">DELETE <span class="pre">/api/1/deals/{id}</span></tt></td>
+</tr>
+<tr><td>Re-post <strong>before</strong>
+the cron fires</td>
+<td><tt class="docutils literal">_post</tt> reverts every
+<tt class="docutils literal">to_delete</tt> binding back
+to <tt class="docutils literal"><span class="pre">sync_state='done'</span></tt> —
+the freee deal is <strong>kept
+as-is</strong>. Any edits made in
+the draft window are
+<strong>not</strong> auto-pushed; press
+<em>Sync to freee</em> if you want
+freee updated.</td>
+<td>(none)</td>
+</tr>
+<tr><td>Re-post <strong>after</strong>
+the cron fires</td>
+<td>The binding’s
+<tt class="docutils literal">external_id</tt> is already
+cleared, so the cron’s
+initial-export path picks
+it up and creates a fresh
+deal.</td>
+<td><tt class="docutils literal">POST /api/1/deals</tt></td>
+</tr>
+</tbody>
+</table>
+<p>The exporter also runs a <strong>search-before-create</strong> step before any
+<tt class="docutils literal">POST</tt>. It first looks up freee for a deal matching the Odoo invoice’s
+<tt class="docutils literal">ref_number</tt> + <tt class="docutils literal">issue_date</tt>. If exactly one match exists (typically
+an orphan from a prior crashed POST), the binding adopts the existing
+freee deal id instead of creating a second one. More than one match →
+the export refuses with an error so an operator can disambiguate
+manually.</p>
+<p>Why no automatic <tt class="docutils literal">PUT</tt> on edit: posted Odoo invoices are finalized
+vouchers (electronic-bookkeeping). Rewriting the matching freee deal
+automatically every time someone tweaks a posted invoice would silently
+bypass that audit boundary. The connector therefore requires an explicit
+operator action (<em>Sync to freee</em>) before freee is updated, and never
+sweeps “dirty” bindings on the cron.</p>
+</div>
+<div class="section" id="extraction-conditions">
+<h1>Extraction conditions</h1>
+<p>On each cron run, the backend selects the <tt class="docutils literal">account.move</tt> records to
+export using the following domain (see <tt class="docutils literal">_export_pending_invoices</tt> in
+<tt class="docutils literal">models/freee_backend.py</tt>):</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="59%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Condition</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">state = 'posted'</tt></td>
+<td>Only confirmed invoices — drafts
+and cancelled moves are skipped.</td>
+</tr>
+<tr><td><tt class="docutils literal">move_type in ('out_invoice', 'out_refund')</tt></td>
+<td>Customer invoices and customer
+credit notes only; vendor bills
+are out of scope.</td>
+</tr>
+<tr><td><tt class="docutils literal">company_id = backend.company_id</tt></td>
+<td>Multi-company isolation — each
+freee backend exports only its
+own company’s documents.</td>
+</tr>
+<tr><td><tt class="docutils literal">id not in already_exported</tt></td>
+<td>Skips moves that already have a
+<tt class="docutils literal">freee.account.move</tt> binding
+with an <tt class="docutils literal">external_id</tt>, so
+initial export happens exactly
+once.</td>
+</tr>
+<tr><td><tt class="docutils literal">invoice_date &gt;= backend.export_from_date</tt></td>
+<td>Only invoices issued on or after
+the backend’s <em>Export From</em>
+date. Stamped to today on first
+authorize so a fresh install
+does <strong>not</strong> retroactively flood
+freee with every historical
+invoice. Admin-editable for a
+back-dated catch-up.</td>
+</tr>
+<tr><td><tt class="docutils literal">invoice_date &gt; backend.lock_date</tt></td>
+<td>Skips invoices whose issue date
+falls inside a closed (locked)
+freee period. freee rejects
+writes there, so blocking
+locally avoids an error loop.
+Leave the field empty to disable
+the check.</td>
+</tr>
+</tbody>
+</table>
+<p>The cron itself only processes freee backends in the <tt class="docutils literal">authorized</tt>
+state (i.e. OAuth completed). To narrow or widen the set of exported
+invoices — for example, restrict to a fiscal year or exclude
+internal-test partners — extend the domain in
+<tt class="docutils literal">_export_pending_invoices</tt>.</p>
+</div>
+<div class="section" id="request-throttling">
+<h1>Request throttling</h1>
+<p>The freee Accounting API limits each app to roughly <strong>3,600 requests per
+hour per company</strong> (~1 req/s steady-state) and returns HTTP 429 when
+exceeded. To stay within that budget when a cron run produces a large
+batch, every enqueued export job is staggered with
+<tt class="docutils literal">with_delay(eta=index * _REQUEST_INTERVAL_SECONDS)</tt> in
+<tt class="docutils literal">_export_pending_invoices</tt>. The first job runs immediately, the second
+after <tt class="docutils literal">_REQUEST_INTERVAL_SECONDS</tt>, the third after
+<tt class="docutils literal">2 * _REQUEST_INTERVAL_SECONDS</tt>, and so on.</p>
+<p>The default interval is <strong>2 seconds</strong> (≈30 req/min — half the freee
+budget, leaving headroom for retries, other API calls and the import
+wizards). Tune the <tt class="docutils literal">_REQUEST_INTERVAL_SECONDS</tt> constant in
+<tt class="docutils literal">connector_freee_base/models/freee_backend.py</tt> if you need to go
+faster (single-tenant deployments) or slower (the same freee company is
+shared with other integrations).</p>
+<p>Note that staggering only controls <em>when each job becomes eligible</em>;
+queue_job worker concurrency still applies. For best results also cap
+the freee channel capacity in your <tt class="docutils literal">queue_job</tt> configuration (e.g.
+<tt class="docutils literal">root.freee = 1</tt>) so the workers do not run multiple export jobs in
+parallel and undo the staggering.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This is an alpha version, the data model and design can change at any time without warning.
+Only for development or testing purpose, do not use in production.
+<a class="reference external" href="https://odoo-community.org/page/development-status">More details on development status</a></p>
+</div>
+<p><strong>Table of contents</strong></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#configuration" id="toc-entry-1">Configuration</a></li>
+<li><a class="reference internal" href="#usage" id="toc-entry-2">Usage</a><ul>
+<li><a class="reference internal" href="#prerequisites-set-up-master-data-in-connector-freee-base" id="toc-entry-3">Prerequisites — set up master data in <tt class="docutils literal">connector_freee_base</tt></a></li>
+<li><a class="reference internal" href="#consumption-tax-rounding" id="toc-entry-4">Consumption-tax rounding</a></li>
+<li><a class="reference internal" href="#withholding-tax-not-supported" id="toc-entry-5">Withholding tax — not supported</a></li>
+<li><a class="reference internal" href="#payment-date-payments-date-semantics" id="toc-entry-6">Payment date (<tt class="docutils literal"><span class="pre">payments[].date</span></tt>) semantics</a></li>
+<li><a class="reference internal" href="#what-gets-sent-to-freee" id="toc-entry-7">What gets sent to freee</a></li>
+<li><a class="reference internal" href="#invoice-specific-steps" id="toc-entry-8">Invoice-specific steps</a></li>
+<li><a class="reference internal" href="#setting-the-department-section-per-invoice-line" id="toc-entry-9">Setting the department (section) per invoice line</a></li>
+<li><a class="reference internal" href="#inspecting-what-was-sent-to-freee-debug" id="toc-entry-10">Inspecting what was sent to freee (debug)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-11">Known issues / Roadmap</a></li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-12">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-13">Credits</a></li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#toc-entry-1">Configuration</a></h2>
+<p>Authentication, the freee company binding and the master-data mappings
+are configured in <tt class="docutils literal">connector_freee_base</tt> (see that module’s
+<em>Configuration</em>). This module adds the invoice <strong>export sweep</strong>, which
+has two deployment steps an operator must complete. The full operations
+guide is <tt class="docutils literal">readme/RUNBOOK.md</tt>; the essentials:</p>
+<ol class="arabic">
+<li><p class="first"><strong>Cap the freee queue_job channel — HARD prerequisite, not
+optional.</strong> Every export / update / delete job runs on the
+<tt class="docutils literal">root.freee</tt> channel. ETA staggering only controls <em>when</em> a job
+becomes eligible; without a capacity cap the workers run several in
+parallel and the connector hits freee’s ~3,600 req/h/company limit
+(HTTP 429) during the nightly sweep. In <tt class="docutils literal">odoo.conf</tt>:</p>
+<pre class="code ini literal-block">
+<span class="k">[queue_job]</span><span class="w">
+</span><span class="na">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">root:1,root.freee:1</span>
+</pre>
+<p>Verify after deployment under <em>Settings → Technical → Queue Job →
+Channels</em>: a <tt class="docutils literal">root.freee</tt> channel with capacity <tt class="docutils literal">1</tt> must exist.
+See <tt class="docutils literal">readme/RUNBOOK.md</tt> §3.</p>
+</li>
+<li><p class="first"><strong>Agree and document the sync SLA.</strong> The export cron <em>freee: Export
+pending invoices (PM)</em> runs once daily at 22:00 server time by
+default, so worst-case lag is ~24 h. It is <tt class="docutils literal"><span class="pre">noupdate=&quot;1&quot;</span></tt> — the
+operator owns the cadence. For same-day export of a specific invoice
+use the <strong>Sync to freee</strong> button on the invoice; for a tighter
+blanket SLA an admin may shorten the cron interval under <em>Settings →
+Technical → Scheduled Actions</em> (still rate-limited). Decide the SLA
+with the customer and record it. See <tt class="docutils literal">readme/RUNBOOK.md</tt> §2.</p>
+</li>
+</ol>
+<p>Before relying on exported figures for a real tax filing, we strongly
+recommend the §1 reconciliation in <tt class="docutils literal">readme/RUNBOOK.md</tt> (human check of
+exported consumption-tax totals against a real freee company). It is a
+recommendation, not a gate — Alpha, AGPL, used at your own risk.</p>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#toc-entry-2">Usage</a></h2>
+<div class="section" id="prerequisites-set-up-master-data-in-connector-freee-base">
+<h3><a class="toc-backref" href="#toc-entry-3">Prerequisites — set up master data in <tt class="docutils literal">connector_freee_base</tt></a></h3>
+<p>Before exporting invoices, finish the master-data setup documented in
+<tt class="docutils literal">connector_freee_base</tt> (Authorize the backend, pick the freee company,
+then map at minimum every income <tt class="docutils literal">account.account</tt> and every sales
+<tt class="docutils literal">account.tax</tt> you use to their freee counterparts). <tt class="docutils literal">res.partner</tt>,
+<tt class="docutils literal">product.template</tt> and <tt class="docutils literal">account.analytic.account</tt> mappings are
+optional and only consumed when the corresponding field is set on the
+invoice line.</p>
+</div>
+<div class="section" id="consumption-tax-rounding">
+<h3><a class="toc-backref" href="#toc-entry-4">Consumption-tax rounding</a></h3>
+<p>The freee Deals API stores <tt class="docutils literal"><span class="pre">details[].amount</span></tt> (tax-inclusive) and
+<tt class="docutils literal"><span class="pre">details[].vat</span></tt> as integer yen, per detail line. The connector
+reproduces <strong>freee’s own per-document rounding rule</strong> rather than
+copying Odoo’s display value <tt class="docutils literal">price_total − price_subtotal</tt> (which
+always rounds half-up and would ignore a round-down setting):</p>
+<ol class="arabic simple">
+<li>Each line’s tax is <tt class="docutils literal">round(net × rate)</tt> using the method configured
+by <tt class="docutils literal">account_tax_rounding_method</tt> (<strong>HALF-UP / UP / DOWN</strong>, with an
+optional per-partner override).</li>
+<li>The tax for each rate is also rounded <strong>once for the whole document</strong>
+(<tt class="docutils literal">round(Σ net × rate)</tt>), and the residual between that total and
+the per-line sum is placed on the <strong>largest-amount line</strong> of the rate
+group (ties: the topmost line). <tt class="docutils literal"><span class="pre">details[].amount</span> = net + vat</tt>.</li>
+</ol>
+<p>This matches freee’s documented behaviour
+(<tt class="docutils literal">support.freee.co.jp/hc/ja/articles/23500770784153</tt>). Example with
+round-down, lines 426 / 2,100 / 1,885 / 220 &#64;10%:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="18%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">net</th>
+<th class="head">per-line tax</th>
+<th class="head">sent <tt class="docutils literal">vat</tt></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>426</td>
+<td>42.6 → 42</td>
+<td>42</td>
+</tr>
+<tr><td>2,100</td>
+<td>210</td>
+<td><strong>211</strong> (absorbs the +1 residual — largest line)</td>
+</tr>
+<tr><td>1,885</td>
+<td>188.5 → 188</td>
+<td>188</td>
+</tr>
+<tr><td>220</td>
+<td>22</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<p>The document total is <tt class="docutils literal">floor(4,631 × 10%) = 463</tt>, and the four <tt class="docutils literal">vat</tt>
+values sum to 463.</p>
+<ul class="simple">
+<li>Odoo’s own <em>Round Per Line</em> / <em>Round Globally</em> company setting is
+<strong>not</strong> used — the deal always follows freee’s per-document rule. With
+<em>Round Globally</em> on the Odoo side the two totals match; with <em>Round
+Per Line</em> they can differ by a yen or two.</li>
+<li>All figures are sent as integers; a non-whole yen value (e.g. a
+mis-configured currency precision) raises a clear error rather than
+being silently truncated.</li>
+<li>Tax-included taxes keep their entered tax-inclusive price (the
+rounding method is skipped for them, mirroring
+<tt class="docutils literal">account_tax_rounding_method</tt>).</li>
+</ul>
+</div>
+<div class="section" id="withholding-tax-not-supported">
+<h3><a class="toc-backref" href="#toc-entry-5">Withholding tax — not supported</a></h3>
+<p>This connector does <strong>not</strong> sync withholding tax. Two reasons line up:</p>
+<ol class="arabic simple">
+<li><strong>freee Deals API</strong>: the deal payload has no withholding field
+(neither on <tt class="docutils literal">details[]</tt> rows nor at the top level — confirmed
+against the freee SDK schema). freee’s own UI lets you attach
+withholding tax to a deal under its transaction-entry withholding
+tab, but that path is not exposed via the API.</li>
+<li><strong>Odoo standard flow</strong>: withholding tax is normally booked at
+payment-registration time (the customer pays the net amount and the
+withheld portion goes to a prepaid withholding-income-tax receivable
+account), not as an invoice line. This connector also does not sync
+<tt class="docutils literal">account.payment</tt> to freee (the Odoo side owns
+commercial-transaction detail, the freee side owns
+financial-accounting settlement — see DESCRIPTION).</li>
+</ol>
+<p>For professional-service invoices that need withholding tax:</p>
+<ul class="simple">
+<li>Issue the full-amount invoice in Odoo and let the connector export it
+to freee as usual (the gross amount).</li>
+<li>Register the withholding tax directly on freee — open the exported
+deal on freee and use freee’s own withholding-tax UI to record the
+withholding amount + tax code.</li>
+</ul>
+<p>If freee later exposes withholding on the Deals API, this connector will
+grow a dedicated mapping; until then it is a known limitation tracked in
+ROADMAP.</p>
+</div>
+<div class="section" id="payment-date-payments-date-semantics">
+<h3><a class="toc-backref" href="#toc-entry-6">Payment date (<tt class="docutils literal"><span class="pre">payments[].date</span></tt>) semantics</a></h3>
+<p>When the invoice’s <tt class="docutils literal">account.journal</tt> has a freee walletable (account)
+mapped, the deal is exported <strong>settled</strong> with
+<tt class="docutils literal"><span class="pre">payments[].date</span> = invoice.invoice_date</tt>. This matches the freee Deals
+API payments semantics (the day money actually moved) under an “issue =
+settle” journal — typical of cash sales or an instant-debit account.</p>
+<p>When the issue date and the cash-in date differ (e.g. bank-transfer
+sales), leave the journal <strong>without</strong> a walletable mapping. The deal is
+then exported <strong>unsettled</strong> and freee-side settlement is registered
+separately in freee itself. Per the connector’s accounting boundary (see
+DESCRIPTION), Odoo’s <tt class="docutils literal">account.payment</tt> and reconciliation are <strong>not</strong>
+pushed; route immediate vs. deferred-settlement invoices through
+different journals to keep <tt class="docutils literal"><span class="pre">payments[].date</span></tt> honest.</p>
+</div>
+<div class="section" id="what-gets-sent-to-freee">
+<h3><a class="toc-backref" href="#toc-entry-7">What gets sent to freee</a></h3>
+<p>Each Odoo customer invoice becomes one freee <tt class="docutils literal">deal</tt>. Below is exactly
+which Odoo source produces which field of the freee
+<tt class="docutils literal">POST /api/1/deals</tt> payload — useful when you want to know “where do I
+set this?”:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="57%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">freee <tt class="docutils literal">deal</tt> field</th>
+<th class="head">Odoo source</th>
+<th class="head">Where to set it in Odoo (menu path →
+form → field/tab)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">company_id</tt></td>
+<td><tt class="docutils literal">freee.backend.external_company_id</tt></td>
+<td>Connectors → freee → Backends → form →
+click <strong>Fetch Companies</strong> → pick the
+freee company (one-time per backend)</td>
+</tr>
+<tr><td><tt class="docutils literal">issue_date</tt></td>
+<td><tt class="docutils literal">account.move.invoice_date</tt></td>
+<td>Accounting / Invoicing → Customers →
+Invoices → form → <em>Invoice Date</em> field</td>
+</tr>
+<tr><td><tt class="docutils literal">due_date</tt></td>
+<td><tt class="docutils literal">account.move.invoice_date_due</tt> — <strong>optional</strong>; omitted from the payload when unset (freee
+then has no due date on the deal)</td>
+<td>Accounting / Invoicing → Customers →
+Invoices → form → <em>Due Date</em> field (set
+directly, or derived from the invoice
+<em>Payment Terms</em>)</td>
+</tr>
+<tr><td><tt class="docutils literal">type</tt> (always <tt class="docutils literal">income</tt>)</td>
+<td><tt class="docutils literal">account.move.move_type</tt> — both <tt class="docutils literal">out_invoice</tt> and <tt class="docutils literal">out_refund</tt> map to <tt class="docutils literal">income</tt>; a
+refund (<em>Credit Note</em>) is sent as <tt class="docutils literal">income</tt> with <strong>negative</strong> <tt class="docutils literal"><span class="pre">details[].amount</span></tt>/<tt class="docutils literal">vat</tt> (a
+“red-slip” / negative-line entry), so it nets against sales instead of booking as an expense</td>
+<td>Determined by the document type —
+<em>Invoice</em> vs <em>Credit Note</em> (no field to
+set)</td>
+</tr>
+<tr><td><tt class="docutils literal">ref_number</tt></td>
+<td><tt class="docutils literal">account.move.name</tt></td>
+<td>Accounting / Invoicing → Customers →
+Invoices → form → invoice <em>Number</em>
+(auto-assigned on post; <em>Reference</em>
+field while still in draft sequence)</td>
+</tr>
+<tr><td><tt class="docutils literal">partner_id</tt> <em>or</em>
+<tt class="docutils literal">partner_code</tt></td>
+<td>First of: <tt class="docutils literal">res.partner.freee_partner_id</tt> (→ <tt class="docutils literal">partner_id</tt>) →
+<tt class="docutils literal">res.partner.freee_partner_code</tt> (→ <tt class="docutils literal">partner_code</tt>) — exactly one key is sent, never both.
+<strong>Required</strong>: an invoice whose partner has neither value mapped is rejected with a
+<tt class="docutils literal">MappingError</tt> instead of being exported partner-less.</td>
+<td>Contacts → form → <strong>freee Mapping</strong>
+group → <em>Pick from freee</em> (sets the
+freee id + code together)</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].account_item_id</span></tt></td>
+<td><tt class="docutils literal">account.move.line.account_id.freee_account_item_id</tt> if set, else
+<tt class="docutils literal">account.move.journal_id.freee_account_item_id</tt> (per-journal fallback for accounts left
+intentionally unmapped)</td>
+<td><strong>Chart of Accounts</strong> → <em>freee Mapping</em>
+tab (per-account, primary), or
+Accounting → Configuration →
+<strong>Journals</strong> → <em>freee Mapping</em> tab
+(per-journal fallback). See <em>Splitting
+sales by journal</em> in
+<tt class="docutils literal">connector_freee_base</tt> USAGE</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].tax_code</span></tt></td>
+<td>First <tt class="docutils literal">tax.freee_tax_code</tt> among <tt class="docutils literal">account.move.line.tax_ids</tt> with a value set</td>
+<td>Accounting → Configuration → Taxes →
+form → <strong>freee Mapping</strong> tab → <em>Pick
+from freee</em> (loads
+<tt class="docutils literal"><span class="pre">/api/1/taxes/companies/{company_id}</span></tt>)</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].amount</span></tt></td>
+<td>Tax-inclusive integer yen = <tt class="docutils literal">net + vat</tt> (<tt class="docutils literal">net</tt> = <tt class="docutils literal">account.move.line.price_subtotal</tt>;
+<tt class="docutils literal">vat</tt> as below). Signed: negative on <tt class="docutils literal">out_refund</tt>. For tax-included lines, Odoo’s
+inclusive <tt class="docutils literal">price_total</tt> is used as-is.</td>
+<td>Auto from the invoice line</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].vat</span></tt></td>
+<td>Consumption tax via freee’s per-document rule: <tt class="docutils literal">round(net × rate)</tt> per line with
+<tt class="docutils literal">account_tax_rounding_method</tt> (HALF-UP / UP / DOWN), plus the document-level residual on the
+largest line — <strong>not</strong> <tt class="docutils literal">price_total − price_subtotal</tt> (always half-up). See <em>Consumption-tax
+rounding</em>.</td>
+<td>Accounting → Settings → <em>Tax Rounding
+Method</em> (and optional per-partner
+override on the Contact)</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].description</span></tt></td>
+<td><tt class="docutils literal">account.move.line.name</tt></td>
+<td>Invoice form → <em>Invoice Lines</em> table →
+<em>Label</em> column on the line</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].section_id</span></tt>
+(section)</td>
+<td>First analytic account in <tt class="docutils literal">account.move.line.analytic_distribution</tt> with
+<tt class="docutils literal">freee_section_id</tt> set</td>
+<td>Accounting / Invoicing → Configuration →
+Analytic Accounts → form → <strong>freee
+Mapping</strong> tab → <em>Pick from freee</em> (loads
+<tt class="docutils literal">/api/1/sections</tt>); then per invoice
+line, see <em>Setting the department
+(section) per invoice line</em> below</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].item_id</span></tt> (item)</td>
+<td><tt class="docutils literal">account.move.line.product_id.product_tmpl_id.freee_item_id</tt></td>
+<td>Products → product form → <strong>freee
+Mapping</strong> group → <em>Pick from freee</em>
+(loads <tt class="docutils literal">/api/1/items</tt>). Optional —
+lines with no product, or whose product
+is unmapped, omit <tt class="docutils literal">item_id</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">payments[]</tt> (settlement)</td>
+<td>Emitted <strong>only</strong> when <tt class="docutils literal">account.move.journal_id.freee_walletable_id</tt> is set: one entry of
+<tt class="docutils literal"><span class="pre">{amount=tax-inclusive</span> total, from_walletable_id, from_walletable_type, date=invoice_date}</tt>.
+For a refund (<tt class="docutils literal">out_refund</tt>) the <tt class="docutils literal">amount</tt> is <strong>negative</strong> (money back out — freee accepts
+it on a deal’s inline <tt class="docutils literal">payments</tt>). Omitted entirely (deal stays unsettled) when the journal
+has no walletable mapped. Only sent on the initial POST (freee’s update API has no
+<tt class="docutils literal">payments</tt>).</td>
+<td>Accounting → Configuration → Journals →
+<strong>freee Mapping</strong> tab → settlement
+account → <em>Pick walletable from freee</em>
+(loads <tt class="docutils literal">/api/1/walletables</tt>). See
+<em>Settling via a walletable</em> in
+<tt class="docutils literal">connector_freee_base</tt> USAGE</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">details[].account_item_id</span></tt>
+(refund override)</td>
+<td>When the invoice’s <tt class="docutils literal">account.journal</tt> has a <strong>sales-returns account</strong> mapped, every line of a
+credit note (<tt class="docutils literal">out_refund</tt>) uses it instead of the line’s own account. Optional; leave empty
+to keep each refund line on its own (negative) account mapping.</td>
+<td>Accounting → Configuration → Journals →
+<strong>freee Mapping</strong> tab → <em>Pick from
+freee</em> (refund account)</td>
+</tr>
+</tbody>
+</table>
+<p>Anything not in the table is not sent. Odoo’s <tt class="docutils literal">payment_state</tt> is
+<strong>not</strong> pushed; whether the deal is settled is driven solely by the
+journal’s walletable mapping above (no mapping ⇒ unsettled, the
+default).</p>
+<p><strong>Required vs optional mappings.</strong> The export will fail loudly with a
+<tt class="docutils literal">MappingError</tt> if any of these are missing:</p>
+<ul class="simple">
+<li>a <strong>JPY</strong> invoice currency — freee is a JPY-only ledger, so a non-JPY
+invoice is rejected (not exported); see <tt class="docutils literal">readme/RUNBOOK.md</tt> §8</li>
+<li><tt class="docutils literal">account.move.invoice_date</tt> (no fallback — set it on the invoice
+before posting)</li>
+<li><tt class="docutils literal">freee_account_item_id</tt> on <strong>either</strong> the line’s <tt class="docutils literal">account.account</tt>
+(the primary, per-account mapping) <strong>or</strong> the invoice’s
+<tt class="docutils literal">account.journal</tt> (the per-journal fallback for accounts left
+intentionally unmapped — the per-journal/walletable split) — only if
+neither is set does the export fail</li>
+<li><tt class="docutils literal">freee_tax_code</tt> on at least one of the line’s <tt class="docutils literal">account.tax</tt>
+records</li>
+</ul>
+<p>These are silently omitted from the payload when missing — the deal
+still exports cleanly:</p>
+<ul class="simple">
+<li><tt class="docutils literal">partner_id</tt> / <tt class="docutils literal">partner_code</tt> — omitted entirely if the partner
+has neither <tt class="docutils literal">freee_partner_id</tt> nor <tt class="docutils literal">freee_partner_code</tt> mapped</li>
+<li><tt class="docutils literal"><span class="pre">details[].description</span></tt> — omitted if the line has no label</li>
+<li><tt class="docutils literal"><span class="pre">details[].section_id</span></tt> — omitted if the line has no analytic
+distribution, or the picked analytic account has no
+<tt class="docutils literal">freee_section_id</tt> set</li>
+<li><tt class="docutils literal"><span class="pre">details[].item_id</span></tt> — omitted if the line has no product, or the
+product’s <tt class="docutils literal">freee_item_id</tt> is unmapped</li>
+</ul>
+</div>
+<div class="section" id="invoice-specific-steps">
+<h3><a class="toc-backref" href="#toc-entry-8">Invoice-specific steps</a></h3>
+<ol class="arabic">
+<li><p class="first">Post a customer invoice. The invoice waits for the next run of the
+<em>freee: Export pending invoices (PM)</em> scheduled action (22:00 server
+time by default — adjust under <em>Settings → Technical → Scheduled
+Actions</em>); on that run a <tt class="docutils literal">freee.account.move</tt> binding is created, a
+queue job is delayed, and the invoice is POSTed to freee as a
+<tt class="docutils literal">deal</tt>. Deals are exported <strong>unsettled</strong> unless the invoice’s
+journal has a freee walletable (account) mapped, in which case they
+are exported <strong>settled</strong> through that walletable (see the
+<tt class="docutils literal">payments[]</tt> row above and <em>Settling via a walletable</em> in
+<tt class="docutils literal">connector_freee_base</tt> USAGE). Odoo’s own <tt class="docutils literal">payment_state</tt> is not
+synced.</p>
+<p>Only invoices that match the extraction conditions are picked up:
+<tt class="docutils literal">state = posted</tt>, <tt class="docutils literal">move_type</tt> is <tt class="docutils literal">out_invoice</tt> or
+<tt class="docutils literal">out_refund</tt>, the invoice belongs to the freee backend’s company,
+and the invoice has not already been exported (no
+<tt class="docutils literal">freee.account.move</tt> binding with an <tt class="docutils literal">external_id</tt>). Drafts,
+cancelled invoices, vendor bills, other-company invoices and
+already-exported invoices are skipped. See <em>Extraction conditions</em> in
+the module description for details.</p>
+</li>
+<li><p class="first">Editing an exported invoice: edits to a posted invoice do <strong>not</strong>
+automatically re-push the matching freee deal. The connector treats
+posted invoices as finalized vouchers and refuses to silently rewrite
+the freee side. To push the change, open the invoice and click <em>Sync
+to freee</em> on the <em>freee</em> notebook page — the connector then issues a
+single <tt class="docutils literal">PUT <span class="pre">/api/1/deals/{id}</span></tt>.</p>
+</li>
+<li><p class="first">Pushing changes immediately: open the invoice → <em>freee</em> notebook page
+→ click <strong>Sync to freee</strong>. Every authorized freee backend matching
+the invoice’s company gets an export job enqueued straight away. Use
+this after posting if you need the deal in freee before the next cron
+tick, or to retry a binding stuck in <em>Error</em>.</p>
+</li>
+<li><p class="first">Cancelling an invoice: pressing <em>Cancel</em> on a posted invoice does
+<strong>not</strong> delete the freee deal immediately. Instead, every exported
+binding is flipped to <em>To Delete</em> and the next cron run dispatches
+the throttled <tt class="docutils literal">DELETE <span class="pre">/api/1/deals/{id}</span></tt> call. This grace window
+lets you undo a mistaken cancel by re-posting the invoice before the
+cron fires — the binding is reverted to <em>Pending</em> and an update is
+pushed instead. After the cron has actually deleted the deal,
+re-posting the invoice re-creates it from scratch.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="setting-the-department-section-per-invoice-line">
+<h3><a class="toc-backref" href="#toc-entry-9">Setting the department (section) per invoice line</a></h3>
+<p>freee’s <tt class="docutils literal"><span class="pre">details[].section_id</span></tt> is driven by Odoo’s analytic
+distribution on the invoice line. Standard Odoo does <strong>not</strong>
+automatically attach a department to the user, so it has to be set on
+the line — either manually by the person who creates the invoice, or by
+an <tt class="docutils literal">account.analytic.distribution.model</tt> rule.</p>
+<p><strong>Manual entry workflow (per invoice line):</strong></p>
+<ol class="arabic simple">
+<li><strong>One-time admin setup</strong> — in <tt class="docutils literal">connector_freee_base</tt>, open the Odoo
+analytic account that represents your freee department (Accounting /
+Invoicing → Configuration → Analytic Accounts). On the <em>freee
+Mapping</em> tab, click <em>Pick from freee</em>, fetch <tt class="docutils literal">/api/1/sections</tt>, and
+pick the matching freee section. The chosen <tt class="docutils literal">freee_section_id</tt> is
+now stored on the analytic account.</li>
+<li><strong>Enable the column on the invoice line list.</strong> Open a customer
+invoice. Above the <em>Invoice Lines</em> table, click the <em>⋮</em> options icon
+(top-right of the line list, the column chooser) and turn on
+<strong>Analytic Distribution</strong>. Without this the column is hidden by
+default.</li>
+<li><strong>Pick the department on each line.</strong> In the <em>Analytic Distribution</em>
+cell, type the name of the analytic account you mapped in step 1, or
+click the field and pick from the dropdown. Set the percentage
+(typically <tt class="docutils literal">100%</tt> to a single account; you can also split across
+multiple analytic accounts and the mapper picks the first one with a
+<tt class="docutils literal">freee_section_id</tt>).</li>
+<li><strong>Save / post the invoice as usual.</strong> On the next cron run (or via
+<em>Sync to freee</em>), the deal payload’s <tt class="docutils literal"><span class="pre">details[].section_id</span></tt> is
+filled with the analytic account’s <tt class="docutils literal">freee_section_id</tt>. Lines
+without an analytic account, or whose analytic account has no
+<tt class="docutils literal">freee_section_id</tt> mapped, simply omit <tt class="docutils literal">section_id</tt> from the
+payload — that is fine, freee accepts deals with no section.</li>
+</ol>
+<p><strong>Defaulting it instead of typing every time:</strong></p>
+<p>If most of your invoices for a given partner / product / income account
+always belong to the same department, set up an
+<tt class="docutils literal">account.analytic.distribution.model</tt> rule (Accounting / Invoicing →
+Configuration → Analytic Distribution Models) keyed on partner, product,
+account prefix, etc. Matching invoice lines will pre-fill the analytic
+distribution automatically — no need to repeat step 3 each time. Note
+that <em>salesperson / user</em> is <strong>not</strong> a built-in matching criterion in
+Odoo; if you need “every invoice raised by sales rep A → department X”
+you’ll need a small custom override on <tt class="docutils literal">account.move.line</tt> to read
+<tt class="docutils literal">self.env.user</tt> and resolve to an analytic account.</p>
+<p>Sync state is shown on each invoice form (<tt class="docutils literal">freee</tt> notebook page) and
+in the dedicated <em>Connectors → freee → Invoice Bindings</em> list.</p>
+</div>
+<div class="section" id="inspecting-what-was-sent-to-freee-debug">
+<h3><a class="toc-backref" href="#toc-entry-10">Inspecting what was sent to freee (debug)</a></h3>
+<p>Each export/delete runs as a queue job; its <strong>Result</strong> (<em>Settings →
+Technical → Queue Job</em>) shows a non-sensitive summary (method, endpoint,
+freee deal id, detail count, status) — the request payload and freee’s
+response are deliberately kept out of that unencrypted column.</p>
+<p>To see the <strong>exact data sent</strong> for troubleshooting: enable developer
+mode, open the freee Backend, and tick <strong>Debug: log request payload</strong>
+(visible only in developer mode, freee-admin only). Subsequent jobs’
+<em>Result</em> then also include the full request payload and freee’s
+response. This re-exposes partner / amounts / line text in the job
+result, so treat it as a temporary action — reproduce the issue, then
+untick it. Leave it off in production.</p>
+</div>
+</div>
+<div class="section" id="known-issues-roadmap">
+<h2><a class="toc-backref" href="#toc-entry-11">Known issues / Roadmap</a></h2>
+<p>Both <tt class="docutils literal">connector_freee_base</tt> and <tt class="docutils literal">connector_freee_invoice</tt> are
+<strong>Alpha</strong> — we’re shipping them to gather early-adopter reactions. Known
+limitations and deliberate deferrals, so adopters decide knowingly:</p>
+<ul class="simple">
+<li><strong>Not yet reconciled against a real freee company.</strong> No automated test
+exercises a real freee company — every test mocks the HTTP layer. A
+real-freee <strong>human reconciliation of exported consumption-tax totals</strong>
+is strongly recommended before relying on it for a tax filing (used at
+your own risk under AGPL). See <tt class="docutils literal">readme/RUNBOOK.md</tt> §1.</li>
+<li><strong>Consumption-tax rounding follows the Odoo line totals.</strong> The
+connector forwards <tt class="docutils literal">account.move.line.price_total</tt> and the
+<tt class="docutils literal">price_total - price_subtotal</tt> delta to <tt class="docutils literal"><span class="pre">details[].amount</span></tt> and
+<tt class="docutils literal"><span class="pre">details[].vat</span></tt> verbatim. Whatever rounding rule Odoo’s invoice uses
+(<tt class="docutils literal">account_tax_rounding_method</tt>) is what lands on freee — no
+freee-side alignment is required.</li>
+<li><strong>Withholding tax is not synced.</strong> The freee Deals API does not expose
+withholding fields on the payload, and Odoo’s standard withholding-tax
+flow is at payment time, not on the invoice line. The connector
+therefore exports the full (gross) deal — register withholding tax
+directly in freee’s transaction-entry withholding UI on the exported
+deal until/unless freee adds first-class API support.</li>
+<li><strong>Credit notes (``out_refund``)</strong> are exported as a freee <em>income</em>
+deal with negative amounts (a “red-slip” / negative-line entry), so
+they net against sales rather than booking as an expense. Have an
+accountant review and accept this representation before relying on it.</li>
+<li><strong>Encryption posture is modest by design.</strong> The Fernet key lives in
+<tt class="docutils literal">odoo.conf</tt> (read via <tt class="docutils literal">tools.config</tt>), so it is kept out of the
+database and absent from any <tt class="docutils literal">pg_dump</tt> — this defends DB dumps and
+casual reads, not a compromised live host that can read <tt class="docutils literal">odoo.conf</tt>
+or process memory. An external-KMS / dedicated secrets-manager option
+is out of scope for now. See
+<tt class="docutils literal">connector_freee_base/readme/SECURITY.md</tt>.</li>
+<li><strong>Master-data mapping is consumed but not auto-resolved.</strong> The
+picker-wizard ids (<tt class="docutils literal">freee_partner_id</tt>, <tt class="docutils literal">freee_item_id</tt>, …) <em>are</em>
+used by the exporter, with documented precedence (USAGE). A future
+enhancement could auto-match Odoo records to freee masters instead of
+requiring the one-time manual pick; not yet planned.</li>
+</ul>
+</div>
+<div class="section" id="bug-tracker">
+<h2><a class="toc-backref" href="#toc-entry-12">Bug Tracker</a></h2>
+<p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/l10n-japan/issues">GitHub Issues</a>.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us to smash it by providing a detailed and welcomed
+<a class="reference external" href="https://github.com/OCA/l10n-japan/issues/new?body=module:%20connector_freee_invoice%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<p>Do not contact contributors directly about support or help with technical issues.</p>
+</div>
+<div class="section" id="credits">
+<h2><a class="toc-backref" href="#toc-entry-13">Credits</a></h2>
+</div>
+</div>
+<div class="section" id="authors">
+<h1>Authors</h1>
+<ul class="simple">
+<li>Takahiro SUNAGA &lt;<a class="reference external" href="mailto:t.sunaga&#64;takahii.co">t.sunaga&#64;takahii.co</a>&gt;</li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h1>Contributors</h1>
+<ul class="simple">
+<li>Takahiro SUNAGA <a class="reference external" href="mailto:t.sunaga&#64;takahii.co">t.sunaga&#64;takahii.co</a></li>
+</ul>
+</div>
+<div class="section" id="maintainers">
+<h1>Maintainers</h1>
+<p>This module is maintained by the OCA.</p>
+<a class="reference external image-reference" href="https://odoo-community.org">
+<img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
+</a>
+<p>OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.</p>
+<p>Current <a class="reference external" href="https://odoo-community.org/page/maintainer-role">maintainer</a>:</p>
+<p><a class="reference external image-reference" href="https://github.com/takahii03"><img alt="takahii03" src="https://github.com/takahii03.png?size=40px" /></a></p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/l10n-japan/tree/18.0/connector_freee_invoice">OCA/l10n-japan</a> project on GitHub.</p>
+<p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
+</div>
+</div>
+</body>
+</html>
