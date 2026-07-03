@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Takahiro SUNAGA <t.sunaga@takahii.co>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Add the optional sales-returns (refund account_item) mapping to the
+         journal's freee Mapping tab, alongside the account-item split and the
+         settlement walletable defined in connector_freee_base. Invoice-
+         specific, so it lives here. -->
+    <record id="view_account_journal_form_refund_freee" model="ir.ui.view">
+        <field name="name">account.journal.form.freee.refund</field>
+        <field name="model">account.journal</field>
+        <field
+            name="inherit_id"
+            ref="connector_freee_base.view_account_journal_form_freee"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='freee_mapping']" position="inside">
+                <group string="Refund Account Item">
+                    <field name="freee_refund_account_item_id" readonly="1" />
+                    <field name="freee_refund_account_item_name" readonly="1" />
+                    <div colspan="2">
+                        <button
+                            name="action_open_freee_refund_account_item_wizard"
+                            type="object"
+                            string="Pick from freee"
+                            class="btn-secondary"
+                            icon="fa-search"
+                        />
+                        <button
+                            name="action_clear_freee_refund_account_item"
+                            type="object"
+                            string="Clear mapping"
+                            class="btn-link"
+                            icon="fa-times"
+                            invisible="not freee_refund_account_item_id"
+                            confirm="Clear the sales-returns account mapping? Credit-note lines on this journal will fall back to their own (negative) account mapping."
+                        />
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_journal_tree_refund_freee" model="ir.ui.view">
+        <field name="name">account.journal.list.freee.refund</field>
+        <field name="model">account.journal</field>
+        <field
+            name="inherit_id"
+            ref="connector_freee_base.view_account_journal_tree_freee"
+        />
+        <field name="arch" type="xml">
+            <field name="freee_walletable_name" position="after">
+                <field
+                    name="freee_refund_account_item_id"
+                    optional="hide"
+                    readonly="1"
+                    groups="connector_freee_base.group_freee_admin"
+                />
+                <field
+                    name="freee_refund_account_item_name"
+                    optional="hide"
+                    readonly="1"
+                    groups="connector_freee_base.group_freee_admin"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>

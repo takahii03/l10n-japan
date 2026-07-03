@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Takahiro SUNAGA <t.sunaga@takahii.co>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Show the refund-journal target on the shared account-item picker.
+         The base form only knows account_id / journal_id; when the wizard
+         is opened from "Map freee Refund Account Item" both are empty and
+         the operator could not see which journal they were mapping. -->
+    <record id="view_freee_account_item_fetch_wizard_form_refund" model="ir.ui.view">
+        <field name="name">freee.account.item.fetch.wizard.form.refund</field>
+        <field name="model">freee.account.item.fetch.wizard</field>
+        <field
+            name="inherit_id"
+            ref="connector_freee_base.view_freee_account_item_fetch_wizard_form"
+        />
+        <field name="arch" type="xml">
+            <field name="journal_id" position="after">
+                <field
+                    name="journal_refund_id"
+                    string="Journal (refund account)"
+                    readonly="1"
+                    invisible="not journal_refund_id"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
